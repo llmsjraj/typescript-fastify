@@ -1,0 +1,31 @@
+{
+  "en": {
+    "ERROR": "Something went wrong",
+    "EMAIL_ALREADY_EXIST": "This email is already exist",
+    "MOBILE_ALREADY_EXIST": "This mobile number is already exist",
+    "ACCOUNT_ALREADY_ACTIVATED": "Your account is already activated",
+    "INVALID_ID": "The field id should be valid uuid",
+    "FIRSTNAME_REQUIRED": "The field firstName is required",
+    "INVALID_FIRSTNAME": "The field firstName is invalid",
+    "LASTNAME_REQUIRED": "The field lastName is required",
+    "INVALID_LASTNAME": "The field lastName is invalid",
+    "EMAIL_REQUIRED": "The field email is required",
+    "INVALID_EMAIL": "The field email is invalid",
+    "MOBILE_REQUIRED": "The field mobile is required",
+    "INVALID_MOBILE": "The field mobile must be a number",
+    "INVALID_PHONE": "Phone must be a string",
+    "CUSTOMER_STATUS_REQUIRED": "The field status is required",
+    "INVALID_CUSTOMER_STATUS": "The field status is invalid",
+    "INVALID_COUNTRY": "The field country is invalid",
+    "INVALID_CITY": "The field city is invalid",
+    "INVALID_ADDRESS": "The field address is invalid",
+    "INVALID_CREATED_ON": "The field createdOn should be a valid date",
+    "INVALID_MODIFIED_ON": "The field modifiedOn should be a valid date",
+    "INVALID_CREATED_BY": "The field createdBy should be a valid uuid",
+    "INVALID_MODIFIED_BY": "The field mofifiedBy should be a valid uuid",
+    "EMAIL_ACTIVATION_TOKEN_REQUIRED": "The field emailActivationToken is required",
+    "INVALID_EMAIL_ACTIVATION_TOKEN": "The field emailActivationToken is invalid",
+    "EMAIL_ACTIVATION_TOKEN_NOT_FOUND": "Email activation token is not found",
+    "ACCOUNT_NOT_FOUND": "Account not found"
+  }
+}

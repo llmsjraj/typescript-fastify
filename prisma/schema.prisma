@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id                   String   @id @default(uuid())
+  firstName            String
+  lastName             String
+  email                String   @unique
+  mobile               Int      @unique
+  phone                String?
+  status               Int
+  country              Int?
+  city                 Int?
+  address              String?
+  createdOn            DateTime @default(now())
+  modifiedOn           DateTime @updatedAt
+  createdBy            String?
+  modifiedBy           String?
+  emailActivationToken String?
+  users                User?
+}
+
+model User {
+  id           String    @id @default(uuid())
+  customer     Customer  @relation(fields: [customerId], references: [id])
+  customerId   String    @unique
+  status       Int
+  createdOn    DateTime  @default(now())
+  createdBy    String?
+  modifiedOn   DateTime  @updatedAt
+  modifiedBy   String?
+  username     String?
+  password     String?
+  activatedOn  DateTime?
+  fbLinked     Boolean?
+  fbId         String?
+  fbToken      String?
+  googleLinked Boolean?
+  googleId     String?
+  googleToken  String?
+}
+
+model CustomerStatus {
+  id    Int    @id @default(autoincrement())
+  name  String
+  value String
+}
+
+model UserStatus {
+  id    Int    @id @default(autoincrement())
+  name  String
+  value String
+}
+
+model Country {
+  id        Int    @id @default(autoincrement())
+  sortName  String
+  name      String
+  phoneCode String
+  cities    City[]
+}
+
+model City {
+  id        Int     @id @default(autoincrement())
+  name      String
+  country   Country @relation(fields: [countryId], references: [id])
+  countryId Int
+}
+
+enum EmailTemplateType {
+  Registration
+  Activation
+}
+
+model EmailTemplate {
+  id                Int               @id @default(autoincrement())
+  from              String
+  subject           String
+  text              String?
+  html              String?
+  emailTemplateType EmailTemplateType
+}
